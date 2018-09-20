@@ -1,10 +1,37 @@
 ---
 title: Change the Prototype to a New Object
 ---
-## Change the Prototype to a New Object
+## Method 
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/object-oriented-programming/change-the-prototype-to-a-new-object/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Instead of adding the properties individually, set the prototype to a new object, like in the example below. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```javascript
+function Cow() { } 
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Cow.prototype = {
+  numLegs: 4, 
+  sound: function() {
+    console.log("Moooo!");
+  }
+};
+```
+
+
+
+## Solution
+```javascript
+function Dog(name) {
+  this.name = name; 
+}
+
+Dog.prototype = {
+  // Add your code below this line
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+```
